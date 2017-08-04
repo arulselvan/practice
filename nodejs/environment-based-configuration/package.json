@@ -1,0 +1,30 @@
+{
+  "name": "environment-based-configuration-sample",
+  "version": "1.0.0",
+  "description": "sample",
+  "scripts": {
+    "start": "export NODE_ENV=production  && npm run build-server && npm run start-node",
+    "build-server": "npm run copy-server-config && ntsc -p server",
+    "copy-server-config": "copyfiles -u 1 ./server/config/**/*.json ./dist_serv",
+    "start-node": "node dist_serv/server.js"
+  },
+  "author": "Arul",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "mongojs": "^2.4.0",
+    "mongoose": "^4.11.5",
+    "typescript": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.16.4",
+    "@types/express": "^4.0.36",
+    "@types/mongoose": "^4.7.19",
+    "@types/node": "^8.0.19",
+    "copyfiles": "^1.2.0",
+    "ntypescript": "^1.201706190042.1",
+    "ts-node": "^3.3.0"
+  }
+}
